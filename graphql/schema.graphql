@@ -1,6 +1,11 @@
 # 사용자가 뭘 할지에 대한 정의
+type Minung {
+  name: String!
+  age: Int!
+  gender: String!
+}
 
 # 사용자에게 정보를 주는 모든 것들
 type Query {
-  name: String! # query에 name을 보내면 String을 보낸다. (isRequired!)
+  person: Minung! # query에 name을 보내면 String을 보낸다. (isRequired!)
 }
