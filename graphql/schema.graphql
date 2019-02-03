@@ -3,4 +3,12 @@
 # 사용자에게 정보를 주는 모든 것들
 type Query {
   name: String! # query에 name을 보내면 String을 보낸다. (isRequired!)
+  people: [Person]! # person을 보내면 Person의 array를 보낸다.
+  person(id: Int!): Person # person과 id를 보내면 Person을 보낸다.
+}
+
+type Person {
+  name: String!
+  age: Int!
+  gender: String!
 }
