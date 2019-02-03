@@ -1,11 +1,14 @@
-const { people, getById } = require('./db');
+const { addMovie, getMovies, getById } = require('./db');
 
 // query를 해결해주는 것
 const resolvers = {
   Query: {
     name: () => 'minung',
-    people: () => people,
-    person: (_, { id }) => getById(id)
+    movies: () => getMovies(),
+    movie: (_, { id }) => getById(id)
+  },
+  Mutation: {
+    addMovie: (_, { name, score }) => addMovie({ name, score })
   }
 }
 

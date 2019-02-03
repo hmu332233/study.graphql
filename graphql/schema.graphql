@@ -1,15 +1,18 @@
+type Movie {
+  id: Int!
+  name: String!
+  score: Float!
+}
 # 사용자가 뭘 할지에 대한 정의
 
 # 사용자에게 정보를 주는 모든 것들
 type Query {
   name: String! # query에 name을 보내면 String을 보낸다. (isRequired!)
-  people: [Person]! # person을 보내면 Person의 array를 보낸다.
-  person(id: Int!): Person # person과 id를 보내면 Person을 보낸다.
+  movies: [Movie]! # person을 보내면 Person의 array를 보낸다.
+  movie(id: Int!): Movie! # person과 id를 보내면 Person을 보낸다. !는 항상 리턴해야한다는 것을 의미. 해당하는 것을 찾지못하면 오류가 뜬다.
 }
 
-type Person {
-  id: Int!
-  name: String!
-  age: Int!
-  gender: String!
+# Database 상태가 변할 때 사용되는 것
+type Mutation {
+  addMovie(name: String!, score: Float!): Movie
 }
