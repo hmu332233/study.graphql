@@ -9,6 +9,7 @@
   "author": "minung.han",
   "license": "MIT",
   "dependencies": {
-    "graphql-yoga": "^1.17.1"
+    "graphql-yoga": "^1.17.1",
+    "node-fetch": "^2.3.0"
   }
 }
