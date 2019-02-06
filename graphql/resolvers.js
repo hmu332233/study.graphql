@@ -16,7 +16,7 @@ const { getMovies } = require('./api');
 const resolvers = {
   Query: {
     
-    movies: () => getMovies(),
+    movies: (_, { rating, limit }) => getMovies({ rating, limit }),
     
   },
   // Mutation: {

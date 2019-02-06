@@ -11,7 +11,7 @@ type Movie {
 # 사용자에게 정보를 주는 모든 것들
 type Query {
   name: String! # query에 name을 보내면 String을 보낸다. (isRequired!)
-  movies: [Movie]! # person을 보내면 Person의 array를 보낸다.
+  movies(limit: Int, rating: Float): [Movie]! # person을 보내면 Person의 array를 보낸다.
   movie(id: Int!): Movie! # person과 id를 보내면 Person을 보낸다. !는 항상 리턴해야한다는 것을 의미. 해당하는 것을 찾지못하면 오류가 뜬다.
 }
 
