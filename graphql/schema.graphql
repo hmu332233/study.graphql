@@ -1,3 +1,11 @@
+type Movie {
+  id: Int!
+  title: String!
+  rating: Float!
+  summary: String!
+  language: String!
+  medium_cover_image: String!
+}
 # 사용자가 뭘 할지에 대한 정의
 type Minung {
   name: String!
@@ -7,5 +15,14 @@ type Minung {
 
 # 사용자에게 정보를 주는 모든 것들
 type Query {
-  person: Minung! # query에 name을 보내면 String을 보낸다. (isRequired!)
+
+  name: String! # query에 name을 보내면 String을 보낸다. (isRequired!)
+  movies(limit: Int, rating: Float): [Movie]! # person을 보내면 Person의 array를 보낸다.
+  movie(id: Int!): Movie! # person과 id를 보내면 Person을 보낸다. !는 항상 리턴해야한다는 것을 의미. 해당하는 것을 찾지못하면 오류가 뜬다.
 }
+
+# Database 상태가 변할 때 사용되는 것
+# type Mutation {
+#   addMovie(name: String!, score: Float!): Movie
+#   deleteMovie(id: Int!): Boolean
+# }
